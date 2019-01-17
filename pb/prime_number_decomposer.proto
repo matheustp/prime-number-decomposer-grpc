@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package prime_number_decomposer;
+
+option go_package="pndpb";
+
+message PrimeNumberDecomposerRequest {
+    int32 number = 1;
+}
+
+message PrimeNumberDecomposerResponse {
+    int32 result = 1;
+}
+
+service PrimeNumberDecomposerService {
+    rpc PrimeNumberDecompose(PrimeNumberDecomposerRequest) returns (stream PrimeNumberDecomposerResponse){};
+}
